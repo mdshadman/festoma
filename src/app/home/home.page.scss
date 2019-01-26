@@ -1,0 +1,49 @@
+ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 14%;
+    font-size: 2.6em;
+    width: 100%;
+    font-weight: bold;
+    color: var(--ion-color-secondary-tint);
+    padding-bottom: 40px;
+    font-family: lovely;
+  }
+
+  .card-subtitle {
+    font-size: 1.5em;
+    position: absolute;
+    top: 41%;
+    width: 100%;
+    color: #fff;
+    font-family: ubuntu;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+  }
+  .card-subtitle2 {
+    font-size: 1.5em;
+    position: absolute;
+    top: 58%;
+    width: 100%;
+    color: #fff;
+    font-family: ubuntu;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+  }
+.cardStyle{
+    width: calc(100% - 19px);
+    height: 200px;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background:rgba(0, 0, 0, 0.27);
+}

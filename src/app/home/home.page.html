@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body" fullscreen>
+  <ion-content class="card-background-page">
+    <ion-card *ngFor="let item of Data" class="cardStyle" (click)="gotoPage(item.component)" [ngStyle]="{'background': 'url('+item.image+')'}">
+      <!-- <ion-img src="{{item.image}}"></ion-img> -->
+      <div class="overlay">
+          <div class="card-title"> {{item.name}}</div>
+          <div class="card-subtitle">{{item.title}}</div>
+          <div class="card-subtitle2">{{item.subtitle}}</div>
+      </div>
+    </ion-card>
+  </ion-content>

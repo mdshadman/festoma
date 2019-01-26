@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <ion-card *ngFor="let item of items">
+    <ion-item>
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-card> -->
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+  <ion-content class="card-background-page">
+    <ion-card *ngFor="let item of Data" (click)="openModal(item.component)">
+      <ion-img src="{{item.image}}"></ion-img>
+      <div class="card-title"> {{item.name}}</div>
+      <div class="card-subtitle">{{item.title}}}</div>
+      <div class="card-subtitle">{{item.subtitle}}}</div>
+    </ion-card>
+  
+    <!-- <ion-card>
+      <ion-img src="../../assets/img/card-amsterdam.png"></ion-img>
+      <div class="card-title">Amsterdam</div>
+      <div class="card-subtitle">64 Listings</div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-img src="../../assets/img/card-sf.png"></ion-img>
+      <div class="card-title">San Francisco</div>
+      <div class="card-subtitle">72 Listings</div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-img src="../../assets/img/card-madison.png"></ion-img>
+      <div class="card-title">Madison</div>
+      <div class="card-subtitle">28 Listings</div>
+    </ion-card> -->
+  </ion-content>
+<!-- </ion-content> -->

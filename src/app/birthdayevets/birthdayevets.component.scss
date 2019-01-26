@@ -1,0 +1,43 @@
+ion-slides{
+    height: 50% !important;
+  }
+  ion-icon{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .dateSheet{
+    display: flex;
+    overflow-x: scroll;
+    flex-direction: row;
+    // margin-right: 10px !important;
+  }
+  .dateCard{
+    min-width: 62px !important;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    --background: white;
+ }
+ .extra{
+    padding: 2px;
+ }
+ ion-list-header{
+    --background: var(--ion-color-secondary-tint);
+    font-weight: bold;
+    color: whitesmoke;
+    font-family: ubuntu;
+ }
+ .cardFacility{
+   min-width: 180px !important;
+    height: 225px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    --background: white;
+    color: white;
+ }
+ ion-segment-button{
+  --padding-end: 0 !important;
+   --padding-start: 0 !important;
+ }

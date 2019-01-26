@@ -1,0 +1,83 @@
+<ion-content class="body" fullscreen>
+  <video autoplay loop muted id="myVideo">
+    <source src="../../assets/video/Blue.mp4" type="video/mp4">
+  </video>
+  <ion-card class="Fixed" class="contentCard" slot="fixed">
+    <h1 text-capitalize text-center class="textH1">welcome to
+      <b class="TextSpecial"> FeStoMa</b>
+    </h1>
+    <p text-capitalize text-center no-padding no-margin color="light" class="TextSpecial">where every thing is
+      <i class="TextSpecial">onClick</i>
+    </p>
+    <section class="specPadd">
+      <ion-buttons class="buttonSpec">
+        <ion-button slot="secondary" (click)="showContent(true)" class="button_round">SignIn</ion-button>
+        <div class="buttonSpecCenter">
+          <span>OR</span>
+        </div>
+        <ion-button slot="primary" (click)="showContent(false)" class="button_round">SignUp</ion-button>
+      </ion-buttons>
+    </section>
+    <ion-list-header *ngIf="shownContent" class="TextSpecial" justify-content-center><p>SignIn to access further.</p> </ion-list-header>
+    <ion-list-header *ngIf="!shownContent" class="TextSpecial" justify-content-center><p>SignUp to access further.</p></ion-list-header>
+  </ion-card>
+
+  <div class="content">
+    <section *ngIf="shownContent">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Email:</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Password:</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </ion-list>
+        <ion-button expand="full" class="FullScreen" routerLink="/home">LogIn</ion-button>
+        <ion-button routerLink="/home" expand="full" class="trans_Butt" padding-vertical>Forgot Password?<a class="TextSpecial pointer"> Click here.</a></ion-button>
+    </section>
+
+    <section *ngIf="!shownContent">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">UserName:</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email address:</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Password:</ion-label>
+          <ion-input type="password">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Confirm Password:</ion-label>
+          <ion-input type="password">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Age:</ion-label>
+          <ion-input type="number" value="Age" placeholder="Enter your Age">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contact:</ion-label>
+          <ion-input type="tel">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Address:</ion-label>
+          <ion-input type="text">
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="full">SignUp</ion-button>
+      <div padding-vertical color="medium" style="display: flex;  justify-content: center;">
+          <a text-center >Already have an account<i class="TextSpecial pointer"> Click here.</i></a>
+      </div>
+    </section>
+  </div>
+</ion-content>

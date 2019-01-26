@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-icon name="arrow-back" expand="icon-only"></ion-icon>
+    </ion-buttons> -->
+    <ion-buttons slot="end">
+      <ion-icon class="end" name="close-circle-outline" expand="icon-only" (click)="closeComp()"></ion-icon>
+    </ion-buttons>
+    <ion-title text-center text-bold>Choose you convinience</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment scrollable (ionChange)="segmentChanged($event)">
+      <ion-segment-button checked value={{button.value}} *ngFor="let button of segmentButtons.buttons">
+        <ion-card class="dateCard" [ngStyle]="{'background': button.cardImage,'background-size':'cover'}">
+          <div class="overlay">
+            <!-- <ion-icon name={{button.iconName}}></ion-icon> -->
+            <ion-label color="light">{{button.label}}</ion-label>
+          </div>
+
+        </ion-card>
+      </ion-segment-button>
+
+
+
+      <!-- 
+      <ion-segment-button value="banquetHalls">
+        <ion-icon name="pin"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="garden">
+        <ion-icon name="star"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="motel">
+        <ion-icon name="call"></ion-icon>
+      </ion-segment-button> -->
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div *ngIf="scrollValue == 'resort'">
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let parents of parentsImage" [ngStyle]="{'background':'linear-gradient(0deg,rgba(88, 87, 88, 0.3),rgba(94, 93, 94, 0.3)),url('+parents.topImage+')','background-size':'cover'}">
+      </ion-slide>
+    </ion-slides>
+
+    <ion-list-header text-uppercase>choose your prefernce {{navData.item.title}}.</ion-list-header>
+    <div>
+      <ion-list-header>Resort</ion-list-header>
+      <div class="dateSheet">
+        <ion-card *ngFor="let dateItem of datesheet" class="dateCard" (click)="selectDate(dateItem)">
+          <h3 text-uppercase>{{dateItem.day}}</h3>
+        </ion-card>
+        <div class="extra">
+          <!-- <p></p> -->
+        </div>
+      </div>
+    </div>
+
+
+
+    <div *ngFor="let datails of facilities">
+      <ion-list-header text-uppercase>{{datails.name}}</ion-list-header>
+      <div class="dateSheet">
+        <ion-card *ngFor="let dateItem of datails.type" class="cardFacility" (click)="selectDate(dateItem)" [ngStyle]="{'background':'linear-gradient(0deg,rgba(88, 87, 88, 0.3),rgba(94, 93, 94, 0.3)),url('+dateItem.image+')','background-size':'cover'}">
+          <div class="cardContent">
+            <ion-button fill="outline" size="small" color="danger" text-uppercase font-weight-bold slot="start">
+              <span color="light">{{dateItem.title}}</span>
+            </ion-button>
+          </div>
+        </ion-card>
+        <div class="extra">
+        </div>
+      </div>
+    </div>
+
+
+    <ion-list>
+      <ion-list-header>Interface Options</ion-list-header>
+
+      <ion-item>
+        <ion-label>Alert</ion-label>
+        <ion-select [interfaceOptions]="customAlertOptions" interface="alert" multiple="true" placeholder="Select One">
+          <ion-select-option value="bacon">Bacon</ion-select-option>
+          <ion-select-option value="olives">Black Olives</ion-select-option>
+          <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+          <ion-select-option value="peppers">Green Peppers</ion-select-option>
+          <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+          <ion-select-option value="onions">Onions</ion-select-option>
+          <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+          <ion-select-option value="pineapple">Pineapple</ion-select-option>
+          <ion-select-option value="sausage">Sausage</ion-select-option>
+          <ion-select-option value="Spinach">Spinach</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Popover</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+          <ion-select-option value="brown">Brown</ion-select-option>
+          <ion-select-option value="blonde">Blonde</ion-select-option>
+          <ion-select-option value="black">Black</ion-select-option>
+          <ion-select-option value="red">Red</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Action Sheet</ion-label>
+        <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
+          <ion-select-option value="red">Red</ion-select-option>
+          <ion-select-option value="purple">Purple</ion-select-option>
+          <ion-select-option value="yellow">Yellow</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+          <ion-select-option value="green">Green</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+  </div>
+
+</ion-content>
