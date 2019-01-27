@@ -24,6 +24,10 @@ export class BirthdayevetsComponent implements OnInit {
   navData: any;
   scrollValue:any
   segmentButtons: { 'buttons': { 'value': string; 'cardImage': string; 'label': string; 'iconName': string; }[]; };
+  banquetHalls: { name: string; type: { "title": string; "image": string; }[]; }[];
+  garden: { name: string; type: { "title": string; "image": string; }[]; }[];
+  motel: { name: string; type: { "title": string; "image": string; }[]; }[];
+  openAir: { name: string; type: ({ "title": string; "image": string; "openAirDetails": { "image": string; }[]; } | { "title": string; "image": string; "openAirDetails"?: undefined; })[]; }[];
   constructor(public actvRoute: ActivatedRoute, public service: ServiceproviderService, public modal: ModalController,
     public navParam: NavParams) {
     
@@ -37,8 +41,16 @@ export class BirthdayevetsComponent implements OnInit {
     this.datesheet = this.service.getData().calender.date
     console.log(this.datesheet)
     
-    this.facilities = this.service.getData().facilities
+    this.facilities = this.service.getData().resort
     console.log(this.facilities);
+    this.banquetHalls = this.service.getData().banquetHalls
+    console.log(this.facilities);
+    this.garden = this.service.getData().garden
+    console.log(this.facilities);
+    this.motel = this.service.getData().motel
+    console.log(this.facilities);
+    this.openAir = this.service.getData().openAir
+    
 
     this.segmentButtons = this.service.getData().segments
     console.log(this.facilities)

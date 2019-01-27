@@ -1,5 +1,5 @@
-ion-slides{
-    height: 50% !important;
+ion-slides,ion-list.slidesHeight{
+    height: 185px !important;
   }
   ion-icon{
     font-size: 18px;
@@ -29,11 +29,11 @@ ion-slides{
     font-family: ubuntu;
  }
  .cardFacility{
-   min-width: 180px !important;
-    height: 225px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+  //  min-width: 180px !important;
+  //   height: 225px;
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   align-items: flex-end;
     --background: white;
     color: white;
  }
@@ -41,3 +41,35 @@ ion-slides{
   --padding-end: 0 !important;
    --padding-start: 0 !important;
  }
+ ion-thumbnail{
+  border-radius: 10px;
+  height: 80px;
+  width: 71px;
+  margin-right: 16px;
+}
+ion-searchbar{
+  width: 90% !important;
+  margin-right: 0 !important;
+}
+.perPerson_cost,.status_Live{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+ion-note{
+  margin: 3px 5px 0px 0px;
+    font-size: 13px;
+    background: var(--ion-color-secondary-tint);
+    color: white;
+    border-radius: 4px;
+    width: 25px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2),0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12);
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 15ms linear,color 15ms linear;
+}
+ion-item.cardContent{
+  --inner-padding-end: 0px;
+    --inner-border-width: 0 0 1px 0;
+}

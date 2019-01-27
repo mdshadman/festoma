@@ -8,7 +8,6 @@ import { WorkshopComponent } from '../workshop/workshop.component';
 import { SeminarComponent } from '../seminar/seminar.component';
 import { FacilitiesComponent } from '../facilities/facilities.component';
 import { OpenAirComponent } from '../open-air/open-air.component';
-import { BirthdayComponent } from '../birthday/birthday.component';
 import { ServiceproviderService } from '../serviceprovider.service';
 @Component({
   selector: 'app-home',
